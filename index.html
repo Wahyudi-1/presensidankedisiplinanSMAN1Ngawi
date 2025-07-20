@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- ========================================================== -->
+    <!-- METADATA & KONFIGURASI HALAMAN                             -->
+    <!-- ========================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Sistem Kedisiplinan Siswa Sekolah</title>
+
+    <!-- ========================================================== -->
+    <!-- STYLESHEETS & FONTS                                        -->
+    <!-- ========================================================== -->
+    
+    <!-- 1. Google Fonts (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- 2. Main Stylesheet (style.css) -->
+    <link rel="stylesheet" href="style.css">
+
+
+     <!-- GANTI KODE FAVICON LAMA ANDA DENGAN BLOK KODE SEDERHANA INI -->
+
+        <!-- Menggunakan satu logo untuk semua keperluan ikon -->
+        <link rel="icon" href="https://raw.githubusercontent.com/Wahyudi-1/presensieksperimen/main/Logo.png">
+        <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/Wahyudi-1/presensieksperimen/main/Logo.png">
+        
+        <!-- Nama aplikasi untuk iOS -->
+        <meta name="apple-mobile-web-app-title" content="Kedisiplinan">
+            
+    <!-- Akhir dari blok kode favicon -->
+        
+</head>
+
+<body class="login-page-v2">
+
+    <!-- ========================================================== -->
+    <!-- MAIN LOGIN CONTAINER                                       -->
+    <!-- ========================================================== -->
+    <div class="login-box">
+        
+        <!-- Kolom Kiri: Ilustrasi & Pesan Selamat Datang -->
+        <div class="login-illustration">
+            <div class="illustration-content">
+               <!-- Memuat gambar ikon dari repositori GitHub -->
+                <img 
+                    class="responsive-icon"
+                    src="https://raw.githubusercontent.com/Wahyudi-1/presensieksperimen/main/Logo.png" 
+                    alt="Logo Sekolah"
+                    >
+                <h3>Sistem Kedisiplinan Siswa</h3>
+                <h3>Sekolah</h3>
+                <p>Otomatis, cepat, dan akurat dengan teknologi QR Code.</p>
+            </div>
+        </div>
+        
+        <!-- Kolom Kanan: Form Login -->
+        <div class="login-form-container">
+            <div class="login-form-content">
+                
+                <h2 class="logo">Sekolah</h2>
+                <p style="color: var(--text-light); margin-bottom: 25px;">Silakan masuk untuk melanjutkan.</p>
+                
+                <!-- Form dibuat agar submit dengan tombol Enter juga berfungsi -->
+                <form onsubmit="event.preventDefault(); handleLogin();">
+                    
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Masukkan username Anda" required autocomplete="username">
+                    </div>
+                    
+                    <!-- Wrapper untuk input password dan ikon toggle -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" placeholder="Masukkan password Anda" required autocomplete="current-password">
+                            <!-- Ikon toggle akan di-generate oleh JavaScript -->
+                            <span id="togglePassword" class="toggle-password-icon"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group" style="margin-top: 2rem;">
+                        <!-- Tombol Login utama. Tipe `submit` agar bisa di-trigger oleh Enter -->
+                        <button type="submit" id="loginButton" class="btn btn-primary btn-block">Login</button>
+                    </div>
+                </form>
+                
+                <!-- Elemen untuk menampilkan pesan status (error/sukses) -->
+                <div id="statusMessage" class="status-message" style="display: none; margin-top: 15px;"></div>
+            </div>
+        </div>
+
+    </div> <!-- End of .login-box -->
+
+    <!-- ========================================================== -->
+    <!-- ELEMEN GLOBAL (LOADING OVERLAY)                            -->
+    <!-- ========================================================== -->
+    <div id="loadingIndicator" class="loading-overlay" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- JAVASCRIPT LIBRARIES & SCRIPT                              -->
+    <!-- Ditempatkan di akhir body untuk rendering halaman yg lebih cepat -->
+    <!-- ========================================================== -->
+    
+    <!-- Script utama aplikasi -->
+    <script src="app.js"></script>
+
+</body>
+</html>
